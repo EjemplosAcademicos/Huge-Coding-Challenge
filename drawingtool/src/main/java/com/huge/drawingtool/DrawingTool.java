@@ -4,7 +4,7 @@ import com.huge.drawingtool.boxtool.Contour;
 import com.huge.drawingtool.boxtool.shapes.Canvas;
 import com.huge.drawingtool.boxtool.shapes.Line;
 import com.huge.drawingtool.boxtool.shapes.Point;
-import com.huge.drawingtool.util.ExceptionDrawingTool;
+import com.huge.drawingtool.util.exceptions.ExceptionDrawingTool;
 
 public class DrawingTool {
 	

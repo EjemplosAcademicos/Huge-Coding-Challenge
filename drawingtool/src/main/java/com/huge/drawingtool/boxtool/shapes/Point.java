@@ -52,13 +52,11 @@ public class Point extends Shape{
 
 	@Override
 	public void draw(Graphic graphic) {
-		graphic.setCacheGraphic(
-				graphic.getCacheGraphic().concat(this.getContour().getContour()+"\n"));
+		
 	}
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return "("+x+","+y+")";
 	}
 	

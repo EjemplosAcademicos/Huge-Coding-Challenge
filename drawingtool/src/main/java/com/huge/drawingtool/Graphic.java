@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.huge.drawingtool.boxtool.shapes.Shape;
-import com.huge.drawingtool.util.ExceptionDrawingTool;
+import com.huge.drawingtool.util.exceptions.ExceptionDrawingTool;
 
 public class Graphic {
 	
