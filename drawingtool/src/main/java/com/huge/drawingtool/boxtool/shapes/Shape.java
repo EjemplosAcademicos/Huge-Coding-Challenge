@@ -6,6 +6,7 @@ package com.huge.drawingtool.boxtool.shapes;
 import com.huge.drawingtool.Graphic;
 import com.huge.drawingtool.boxtool.Color;
 import com.huge.drawingtool.boxtool.Contour;
+import com.huge.drawingtool.util.ExceptionShape;
 
 /**
  * This is the abstract parent class for different shape classes,
@@ -57,6 +58,6 @@ public abstract class Shape {
 	/**
 	 * @param canvas
 	 */
-	public abstract void draw(Graphic graphic);
+	public abstract void draw(Graphic graphic) throws ExceptionShape;
 
 }

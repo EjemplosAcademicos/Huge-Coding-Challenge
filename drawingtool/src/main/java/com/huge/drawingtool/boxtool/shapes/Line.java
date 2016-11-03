@@ -1,11 +1,9 @@
 package com.huge.drawingtool.boxtool.shapes;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.huge.drawingtool.Graphic;
 import com.huge.drawingtool.boxtool.Color;
 import com.huge.drawingtool.boxtool.Contour;
+import com.huge.drawingtool.util.ExceptionShape;
 
 public class Line extends Shape{
 
@@ -37,42 +35,52 @@ public class Line extends Shape{
 	}
 	
 	@Override
-	public void draw(Graphic graphic) {
-		
-		String line = "";
-		//Vertical line
-		if(point_1.getX() == point_2.getX()){
-			//go to Y
-			for(int i=0; i<point_1.getY(); i++){
-				line += "\n";
-			}
-			for(int i=point_1.getY(); i<=point_2.getY(); i++){
-				//go to x
-				for(int j=0; j<point_1.getX(); j++){
-					line += " ";
+	public void draw(Graphic graphic) throws ExceptionShape {
+		Point dimensionCanvas = ((Canvas)graphic.getCanvas()).getDimensions();
+		//check if the points represents horizontal or vertical lines
+		if((point_1.getX() == point_2.getX()) || (point_1.getY() == point_2.getY())){
+			
+			//check if la linea este dentro del canvas
+			if( point_1.getX()>0 && point_1.getX()<=dimensionCanvas.getX() &&
+				point_1.getY()>0 && point_1.getY()<=dimensionCanvas.getY()){
+				
+				//check si el origen es menor que el destino
+				if( point_1.getX() <= point_2.getX() && point_1.getY() <= point_2.getY()){
+					
+					//Vertical line
+					if(point_1.getX() == point_2.getX()){
+						for(int i=point_1.getY(); i<=point_2.getY() && i<=dimensionCanvas.getY(); i++){
+							graphic.getPanel().get(i).remove(point_1.getX());
+							graphic.getPanel().get(i).add(point_1.getX(),this.getContour().getContour());
+						}
+					}
+					//horizontal line
+					if(point_1.getY() == point_2.getY()){
+						//draw line
+						for(int i=point_1.getX(); i<=point_2.getX() && i<=dimensionCanvas.getX(); i++){
+							graphic.getPanel().get(point_1.getY()).remove(i);
+							graphic.getPanel().get(point_1.getY()).add(i,this.getContour().getContour());
+						}
+					}
+					
+				}else{
+					ExceptionShape exceptionShape = new ExceptionShape();
+					exceptionShape.setId("Line "+ExceptionShape.ERROR);
+					exceptionShape.setMsnUser("Can't draw a line from "+point_1.toString()+" to "+point_2.toString());
+					throw exceptionShape;
 				}
-				line += this.getContour().getContour()+"\n";
+			}else{
+				ExceptionShape exceptionShape = new ExceptionShape();
+				exceptionShape.setId("Line "+ExceptionShape.WARNING);
+				exceptionShape.setMsnUser("The line is out of the canvas. "+point_1.toString()+" to "+point_2.toString());
+				throw exceptionShape;
 			}
+		}else{
+			ExceptionShape exceptionShape = new ExceptionShape();
+			exceptionShape.setId("Line "+ExceptionShape.ERROR);
+			exceptionShape.setMsnUser("The points doesn't represent a horizontal or vertical lines. "+point_1.toString()+" to "+point_2.toString());
+			throw exceptionShape;
 		}
-		//horizontal line
-		if(point_1.getY() == point_2.getY()){
-			//go to Y
-			for(int i=0; i<point_1.getY(); i++){
-				line += "\n";
-			}
-			//go to x
-			for(int i=0; i<point_1.getX(); i++){
-				line += Contour.SPACE.getContour();
-			}
-			//draw line
-			Point dimensionCanvas = ((Canvas)graphic.getCanvas()).getDimensions();
-			for(int i=point_1.getX(); i<=point_2.getX() && i<=dimensionCanvas.getX(); i++){
-				line += this.getContour().getContour();
-				graphic.getPanel().get(point_1.getY()).remove(i);
-				graphic.getPanel().get(point_1.getY()).add(i,this.getContour().getContour());
-			}
-		}
-		graphic.setCacheGraphic(graphic.getCacheGraphic().concat(line+"\n"));
 	}
 
 }

@@ -2,6 +2,9 @@ package com.huge.drawingtool.util;
 
 public class ExceptionDrawingTool extends Exception{
 	
+	public static final String ERROR = "Error";
+	public static final String WARNING = "Warning";
+	
 	protected String msnTechnical;
 	protected String msnUser;
 	protected String id;
@@ -21,6 +24,14 @@ public class ExceptionDrawingTool extends Exception{
 		this.msnUser = msnUser;
 		this.id = id;
 		this.exceptionSource = exceptionSource;
+	}
+	
+	public void showUserMessage(){
+		System.out.println(id+": "+msnUser);
+	}
+	
+	public void showTechnicalMessage(){
+		System.out.println(id+":"+msnTechnical);
 	}
 
 	public String getMsnTechnical() {
@@ -55,4 +66,5 @@ public class ExceptionDrawingTool extends Exception{
 		this.exceptionSource = exceptionSource;
 	}
 
+	
 }

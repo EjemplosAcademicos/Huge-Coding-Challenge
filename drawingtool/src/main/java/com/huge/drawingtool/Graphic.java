@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.huge.drawingtool.boxtool.shapes.Shape;
+import com.huge.drawingtool.util.ExceptionDrawingTool;
 
 public class Graphic {
 	
@@ -12,7 +13,7 @@ public class Graphic {
 	private StringBuffer printGraphic;
 	private List<List<Character>> panel;
 	
-	public Graphic(Shape canvas){
+	public Graphic(Shape canvas) throws ExceptionDrawingTool{
 		cacheGraphic = "";
 		printGraphic = new StringBuffer();
 		panel = new ArrayList<List<Character>>();
@@ -20,7 +21,7 @@ public class Graphic {
 		this.drawShape(canvas);
 	}
 
-	public void drawShape(Shape shape){
+	public void drawShape(Shape shape) throws ExceptionDrawingTool{
 		shape.draw(this);	
 		printPanel();
 	}
