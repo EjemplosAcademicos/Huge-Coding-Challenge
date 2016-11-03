@@ -20,10 +20,10 @@ public class DrawingTool {
 			graphics = new Graphic(canvas);
 			
 			//create a point
-			int x1 = 3;
-			int y1 = 4;
+			int x1 = 6;
+			int y1 = 3;
 			Point point = new Point(x1, y1);
-			//graphics.drawShape(point);
+			graphics.drawShape(point);
 			
 			//create a line horizontal
 			Point point1 = new Point(1, 2);

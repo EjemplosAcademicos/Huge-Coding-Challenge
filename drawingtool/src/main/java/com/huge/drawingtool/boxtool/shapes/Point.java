@@ -6,6 +6,7 @@ package com.huge.drawingtool.boxtool.shapes;
 import com.huge.drawingtool.Graphic;
 import com.huge.drawingtool.boxtool.Color;
 import com.huge.drawingtool.boxtool.Contour;
+import com.huge.drawingtool.util.exceptions.ExceptionShape;
 
 /**
  * @author sebas.monsalve@gmailcom
@@ -51,8 +52,21 @@ public class Point extends Shape{
 	}
 
 	@Override
-	public void draw(Graphic graphic) {
-		
+	public void draw(Graphic graphic) throws ExceptionShape {
+		Point dimensionCanvas = ((Canvas)graphic.getCanvas()).getDimensions();
+		//check if la linea este dentro del canvas
+		if( x>0 && x<=dimensionCanvas.getX() &&
+			y>0 && y<=dimensionCanvas.getY()){
+			
+			graphic.getPanel().get(y).remove(x);
+			graphic.getPanel().get(y).add(x,this.getContour().getContour());
+			
+		}else{
+			ExceptionShape exceptionShape = new ExceptionShape();
+			exceptionShape.setId("Point "+ExceptionShape.WARNING);
+			exceptionShape.setMsnUser("The point is out of the canvas. "+toString());
+			throw exceptionShape;
+		}
 	}
 
 	@Override
