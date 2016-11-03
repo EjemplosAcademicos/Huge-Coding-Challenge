@@ -1,6 +1,8 @@
 package com.huge.drawingtool;
 
+import com.huge.drawingtool.boxtool.Color;
 import com.huge.drawingtool.boxtool.Contour;
+import com.huge.drawingtool.boxtool.paint.BucketFill;
 import com.huge.drawingtool.boxtool.shapes.Canvas;
 import com.huge.drawingtool.boxtool.shapes.Line;
 import com.huge.drawingtool.boxtool.shapes.Point;
@@ -21,8 +23,8 @@ public class DrawingTool {
 			graphics = new Graphic(canvas);
 			
 			//create a point
-			int x1 = 6;
-			int y1 = 3;
+			int x1 = 11;
+			int y1 = 2;
 			Point point = new Point(x1, y1);
 			graphics.drawShape(point);
 			
@@ -33,7 +35,7 @@ public class DrawingTool {
 			graphics.drawShape(lineH);
 			
 			//create a line horizontal
-			Line lineV = new Line(new Point(6,3),new Point(6,4));
+			Line lineV = new Line(new Point(6,2),new Point(6,4));
 			graphics.drawShape(lineV);
 			
 			//create rectangle
@@ -42,6 +44,11 @@ public class DrawingTool {
 			
 			Rectangle rectangle2 = new Rectangle(new Point(16,2),new Point(19,4));
 			//graphics.drawShape(rectangle2);
+			
+			
+			//bucket fill
+			BucketFill bucketfill = new BucketFill(new Point(-1, 1),new Color('$'));
+			graphics.paint(bucketfill);
 			
 		}catch (ExceptionDrawingTool e) {
 			e.showUserMessage();

@@ -3,6 +3,7 @@ package com.huge.drawingtool;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.huge.drawingtool.boxtool.paint.Paint;
 import com.huge.drawingtool.boxtool.shapes.Shape;
 import com.huge.drawingtool.util.exceptions.ExceptionDrawingTool;
 
@@ -23,6 +24,11 @@ public class Graphic {
 
 	public void drawShape(Shape shape) throws ExceptionDrawingTool{
 		shape.draw(this);	
+		printPanel();
+	}
+	
+	public void paint(Paint paintTool) throws ExceptionDrawingTool{
+		paintTool.paint(this);	
 		printPanel();
 	}
 	

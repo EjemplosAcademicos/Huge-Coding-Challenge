@@ -16,12 +16,14 @@ public class Point extends Shape{
 
 	private int x;
 	private int y;
+	private boolean empty;
 	
 	public Point() {
 		super(Contour.DOT);
 		super.setNameShape("POINT");
 		this.x = 0;
 		this.y = 0;
+		this.empty = false;
 	}
 	
 	public Point(int x, int y) {
@@ -29,6 +31,7 @@ public class Point extends Shape{
 		super.setNameShape("POINT");
 		this.x = x;
 		this.y = y;
+		this.empty = false;
 	}
 	
 	public Point(int x, int y, Color color) {
@@ -36,6 +39,7 @@ public class Point extends Shape{
 		super.setNameShape("POINT");
 		this.x = x;
 		this.y = y;
+		this.empty = false;
 	}
 	
 	public int getX() {
@@ -77,6 +81,12 @@ public class Point extends Shape{
 		return "("+x+","+y+")";
 	}
 	
+	public boolean isEmpty(){
+		return empty;
+	}
 	
+	public void setEmpty(boolean empty) {
+		this.empty = empty;
+	}
 	
 }

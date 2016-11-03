@@ -8,7 +8,7 @@ public enum Contour {
 	HASH('#'),
 	ASTERISK('*'),
 	FORWARD_SLAH('/'),
-	B('|'),
+	VERTICAL_BAR('|'),
 	SPACE(' ');
 		
 	private char contour;

@@ -27,11 +27,11 @@ public class Canvas extends Shape{
 		graphic.getPanel().add(row);
 		for(int height=0;height<dimensions.getY(); height++){
 			row = new ArrayList<Character>();
-			row.add(Contour.B.getContour());
+			row.add(Contour.VERTICAL_BAR.getContour());
 			for(int width=0; width<dimensions.getX(); width++){
 				row.add(Contour.SPACE.getContour());
 			}
-			row.add(Contour.B.getContour());
+			row.add(Contour.VERTICAL_BAR.getContour());
 			graphic.getPanel().add(row);
 		}
 		row = new ArrayList<Character>();

@@ -3,7 +3,9 @@
  */
 package com.huge.drawingtool.boxtool.paint;
 
+import com.huge.drawingtool.Graphic;
 import com.huge.drawingtool.boxtool.Color;
+import com.huge.drawingtool.util.exceptions.ExceptionPaint;
 
 /**
  * @author itos
@@ -11,15 +13,23 @@ import com.huge.drawingtool.boxtool.Color;
  */
 public abstract class Paint {
 
-	private Color color;
+	private Color color_1;
 	
 	Paint(){
-		this.color = new Color();
+		this.color_1 = new Color();
 	}
 	
-	Paint(Color color){
-		this.color = color;
+	Paint(Color color_1){
+		this.color_1 = color_1;
 	}
-	
-	public abstract void paint();
+		
+	public Color getColor_1() {
+		return color_1;
+	}
+
+	public void setColor_1(Color color_1) {
+		this.color_1 = color_1;
+	}
+
+	public abstract void paint(Graphic graphic) throws ExceptionPaint;
 }
