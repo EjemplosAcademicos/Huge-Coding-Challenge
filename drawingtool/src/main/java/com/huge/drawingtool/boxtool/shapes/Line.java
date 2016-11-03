@@ -12,24 +12,28 @@ public class Line extends Shape{
 	
 	public Line(Point point_1, Point point_2){
 		super();
+		super.setNameShape("LINE");
 		this.point_1 = point_1;
 		this.point_2 = point_2;
 	}
 	
 	public Line(Point point_1, Point point_2, Contour lineForm){
 		super(lineForm);
+		super.setNameShape("LINE");
 		this.point_1 = point_1;
 		this.point_2 = point_2;
 	}
 	
 	public Line(Point point_1, Point point_2, Color color){
 		super(color);
+		super.setNameShape("LINE");
 		this.point_1 = point_1;
 		this.point_2 = point_2;
 	}
 	
 	public Line(Point point_1, Point point_2, Contour lineForm, Color color){
 		super(color, lineForm);
+		super.setNameShape("LINE");
 		this.point_1 = point_1;
 		this.point_2 = point_2;
 	}
@@ -65,19 +69,19 @@ public class Line extends Shape{
 					
 				}else{
 					ExceptionShape exceptionShape = new ExceptionShape();
-					exceptionShape.setId("Line "+ExceptionShape.ERROR);
+					exceptionShape.setId(super.getNameShape()+" "+ExceptionShape.ERROR);
 					exceptionShape.setMsnUser("Can't draw a line from "+point_1.toString()+" to "+point_2.toString());
 					throw exceptionShape;
 				}
 			}else{
 				ExceptionShape exceptionShape = new ExceptionShape();
-				exceptionShape.setId("Line "+ExceptionShape.WARNING);
+				exceptionShape.setId(super.getNameShape()+" "+ExceptionShape.WARNING);
 				exceptionShape.setMsnUser("The line is out of the canvas. "+point_1.toString()+" to "+point_2.toString());
 				throw exceptionShape;
 			}
 		}else{
 			ExceptionShape exceptionShape = new ExceptionShape();
-			exceptionShape.setId("Line "+ExceptionShape.ERROR);
+			exceptionShape.setId(super.getNameShape()+" "+ExceptionShape.ERROR);
 			exceptionShape.setMsnUser("The points doesn't represent a horizontal or vertical lines. "+point_1.toString()+" to "+point_2.toString());
 			throw exceptionShape;
 		}

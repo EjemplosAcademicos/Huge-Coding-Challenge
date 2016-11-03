@@ -19,18 +19,21 @@ public class Point extends Shape{
 	
 	public Point() {
 		super(Contour.DOT);
+		super.setNameShape("POINT");
 		this.x = 0;
 		this.y = 0;
 	}
 	
 	public Point(int x, int y) {
 		super(Contour.DOT);
+		super.setNameShape("POINT");
 		this.x = x;
 		this.y = y;
 	}
 	
 	public Point(int x, int y, Color color) {
 		super(color, Contour.DOT);
+		super.setNameShape("POINT");
 		this.x = x;
 		this.y = y;
 	}
@@ -63,7 +66,7 @@ public class Point extends Shape{
 			
 		}else{
 			ExceptionShape exceptionShape = new ExceptionShape();
-			exceptionShape.setId("Point "+ExceptionShape.WARNING);
+			exceptionShape.setId(super.getNameShape()+" "+ExceptionShape.WARNING);
 			exceptionShape.setMsnUser("The point is out of the canvas. "+toString());
 			throw exceptionShape;
 		}

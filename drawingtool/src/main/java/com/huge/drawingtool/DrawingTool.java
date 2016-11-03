@@ -4,6 +4,7 @@ import com.huge.drawingtool.boxtool.Contour;
 import com.huge.drawingtool.boxtool.shapes.Canvas;
 import com.huge.drawingtool.boxtool.shapes.Line;
 import com.huge.drawingtool.boxtool.shapes.Point;
+import com.huge.drawingtool.boxtool.shapes.Rectangle;
 import com.huge.drawingtool.util.exceptions.ExceptionDrawingTool;
 
 public class DrawingTool {
@@ -26,14 +27,21 @@ public class DrawingTool {
 			graphics.drawShape(point);
 			
 			//create a line horizontal
-			Point point1 = new Point(1, 2);
-			Point point2 = new Point(1, 3);
-			Line lineH = new Line(point1,point2,Contour.ASTERISK);
+			Point point1 = new Point(1,2);
+			Point point2 = new Point(6,2);
+			Line lineH = new Line(point1,point2);
 			graphics.drawShape(lineH);
 			
 			//create a line horizontal
-			Line lineV = new Line(new Point(20, 1),new Point(20,3));
+			Line lineV = new Line(new Point(6,3),new Point(6,4));
 			graphics.drawShape(lineV);
+			
+			//create rectangle
+			Rectangle rectangle = new Rectangle(new Point(16,1),new Point(19,3));
+			graphics.drawShape(rectangle);
+			
+			Rectangle rectangle2 = new Rectangle(new Point(16,2),new Point(19,4));
+			//graphics.drawShape(rectangle2);
 			
 		}catch (ExceptionDrawingTool e) {
 			e.showUserMessage();

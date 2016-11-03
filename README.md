@@ -32,3 +32,9 @@
 ```
 
 ## Some useful info
+
+```
+ - debe existir un canvas para poder dibujar
+ - Se puede dibujar si los puntos parametros permiten dibujar la forma deseada
+ - Solo se puede dibujar en los limites del canvas
+```

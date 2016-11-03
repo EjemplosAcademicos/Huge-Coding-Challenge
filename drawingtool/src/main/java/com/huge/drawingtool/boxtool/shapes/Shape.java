@@ -18,6 +18,7 @@ public abstract class Shape {
 	
 	private Color color;
 	private Contour contour;
+	private String nameShape;
 	
 	Shape(){
 		this.color = new Color();
@@ -53,6 +54,14 @@ public abstract class Shape {
 
 	public void setContour(Contour contour) {
 		this.contour = contour;
+	}
+
+	public String getNameShape() {
+		return nameShape;
+	}
+
+	public void setNameShape(String nameShape) {
+		this.nameShape = nameShape;
 	}
 
 	/**
