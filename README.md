@@ -21,20 +21,23 @@ At moment the program let to create the following shapes:
 |-- src
 |   |-- main/java/com/huge/drawingtool
 |   |   |-- boxtool        			 # by convension async modules are prefixed with + sign            
-|   |       |-- feature-module-1.component.html
-|   |       |-- feature-module-1.component.ts
-|   |       |-- feature-module-1.module.ts
-|   |       |-- feature-module-1.routing.ts
+|   |       |-- paint
+|   |       	|--
+|   |       	|-- 
+|   |       |-- shapes
+|   |       	|-- 
+|   |       	|-- 
 |   |       ...
 |   |   |-- file
 |   | 		|-- feature-module-1.component.html
-|   |   |-- util                    # folder with common directives, co
-|   |       |-- exceptions                   
+|   |   |-- util                    # utilities commons to the program
+|   |       |-- exceptions          # mangement exceptions of the program        
 |   |   ...    
-|   |   |-- App.java
-|   |   |-- DrawingTool.java       # app root module
-|   |   |-- Graphic.java	       # app root routing  
-|   |       
+|   |   |-- App.java               # main 
+|   |   |-- DrawingTool.java       
+|   |   |-- Graphic.java	         
+|   | 	...
+|	|-- test/java/com/huge/drawingtool     # Junit test module 
 ...
 |-- pom.xml     # maven configuration dependencies
 ...

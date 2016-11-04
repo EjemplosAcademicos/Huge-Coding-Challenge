@@ -10,12 +10,10 @@ import com.huge.drawingtool.util.exceptions.ExceptionDrawingTool;
 public class Graphic {
 	
 	private Shape canvas;
-	private String cacheGraphic;
 	private StringBuffer printGraphic;
 	private List<List<Character>> panel;
 	
 	public Graphic(Shape canvas) throws ExceptionDrawingTool{
-		cacheGraphic = "";
 		printGraphic = new StringBuffer();
 		panel = new ArrayList<List<Character>>();
 		this.canvas = canvas;
@@ -49,14 +47,6 @@ public class Graphic {
 
 	public void setCanvas(Shape canvas) {
 		this.canvas = canvas;
-	}
-
-	public String getCacheGraphic() {
-		return cacheGraphic;
-	}
-
-	public void setCacheGraphic(String cacheGraphic) {
-		this.cacheGraphic = cacheGraphic;
 	}
 	
 	public List<List<Character>> getPanel() {
