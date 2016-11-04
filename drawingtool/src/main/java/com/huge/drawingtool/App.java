@@ -14,23 +14,22 @@ public class App
 {
     public static void main( String[] args )
     {
-    	System.out.println("HELLO");
-//        DrawingTool drawingTool = new DrawingTool();
-//        
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        System.out.print("Enter path file (C:/xxx/xxx/input.txt): ");
-//        try {
-//			String pathFile = br.readLine();
-//        	//String pathFile = "D:/input.txt";
-//			drawingTool.newGraphic(pathFile);
-//	        drawingTool.saveGraphic();
-//	        System.out.print("Graphic created!!. It is in the same directory that input.txt with the name output.txt");
-//		}     
-//        catch (ExceptionDrawingTool e) {
-//			e.showUserMessage();
-//		}
-//        catch(Exception e){
-//        	e.printStackTrace();
-//        }
+        DrawingTool drawingTool = new DrawingTool();
+        
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Enter path file (C:/xxx/xxx/input.txt): ");
+        try {
+			String pathFile = br.readLine();
+        	//String pathFile = "D:/input.txt";
+			drawingTool.newGraphic(pathFile);
+	        drawingTool.saveGraphic();
+	        System.out.print("Graphic created!!. It is in the same directory that input.txt with the name output.txt");
+		}     
+        catch (ExceptionDrawingTool e) {
+			e.showUserMessage();
+		}
+        catch(Exception e){
+        	e.printStackTrace();
+        }
     }
 }

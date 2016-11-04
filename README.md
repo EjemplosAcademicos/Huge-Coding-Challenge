@@ -12,9 +12,13 @@ At moment the program let to create the following shapes:
 
 ```
 ## Prerequisites
-
+```
+java version "1.8.0_101"
+```
 ## Installation
-
+```
+java -jar DrawingTool.jar
+```
 ## App structure
 
 ```
