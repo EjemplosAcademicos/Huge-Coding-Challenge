@@ -19,10 +19,9 @@ public class App
         DrawingTool drawingTool = new DrawingTool();
         
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        //System.out.print("Enter path file (C:/xxx/xxx/input.txt): ");
+        System.out.print("Enter path file (C:/xxx/xxx/namefile): ");
         try {
-			//String pathFile = br.readLine();
-        	String pathFile = "d:/input.txt";
+			String pathFile = br.readLine();
 			drawingTool.newGraphic(pathFile);
 	        drawingTool.saveGraphic();
 	        System.out.print("Graphic created!!. It is in the same directory that input.txt with the name output.txt");

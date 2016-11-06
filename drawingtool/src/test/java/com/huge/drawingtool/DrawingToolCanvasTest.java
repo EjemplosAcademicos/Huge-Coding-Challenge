@@ -27,8 +27,9 @@ public class DrawingToolCanvasTest {
 	@Parameters
 	public static Collection<Object[]> paths(){
 		Object[][] paths = new Object[][]{
-			{"D:/Huge/Coding Challenge/wk_luna_huge/drawingtool/src/test/resources/test_files/emptyfirstline.txt"},
-			{"D:/Huge/Coding Challenge/wk_luna_huge/drawingtool/src/test/resources/test_files/nocanvas.txt"}
+			{"/test_files/emptyfirstline.txt"},
+			{"/test_files/nocanvas.txt"},
+			{"/test_files/wrongfile.png"},
 		};
 		return Arrays.asList(paths);
 	}
@@ -45,7 +46,7 @@ public class DrawingToolCanvasTest {
 	public void testNewGraphicValidCanvas(){
 		try {
 			drawingTool.newGraphic(pathFile);
-			fail("Excepted exception no exist canvas");
+			fail("Excepted exception no exist canvas. "+pathFile);
 		} catch (ExceptionFormatFile e) {
 			assertEquals("You need a canvas to draw", e.getMsnUser());
 		} catch(Exception e){

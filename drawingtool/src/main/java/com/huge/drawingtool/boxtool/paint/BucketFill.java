@@ -79,4 +79,9 @@ public class BucketFill extends Paint{
 		pointEmpty.setEmpty(true);
 		return pointEmpty;
 	}
+	
+	@Override
+	public String toString() {
+		return "Bucket Fill "+areaConnected.toString()+", color: "+this.getColor_1().getColor();
+	}
 }

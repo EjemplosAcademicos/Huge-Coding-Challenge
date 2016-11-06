@@ -27,12 +27,12 @@ public class DrawingToolStartLineTest {
 	@Parameters
 	public static Collection<Object[]> paths(){
 		Object[][] paths = new Object[][]{
-			{"D:/Huge/Coding Challenge/wk_luna_huge/drawingtool/src/test/resources/test_files/wrong_start_line_1.txt"},
-			{"D:/Huge/Coding Challenge/wk_luna_huge/drawingtool/src/test/resources/test_files/wrong_start_line_2.txt"},
-			{"D:/Huge/Coding Challenge/wk_luna_huge/drawingtool/src/test/resources/test_files/nocanvas.txt"},
-			{"D:/Huge/Coding Challenge/wk_luna_huge/drawingtool/src/test/resources/test_files/bucketbadcolor.txt"},
-			{"D:/Huge/Coding Challenge/wk_luna_huge/drawingtool/src/test/resources/test_files/bucketbadcolor2.txt"},
-			{"D:/Huge/Coding Challenge/wk_luna_huge/drawingtool/src/test/resources/test_files/bucketbadcolor3.txt"}
+			{"/test_files/wrong_start_line_1.txt"},
+			{"/test_files/wrong_start_line_2.txt"},
+			{"/test_files/nocanvas.txt"},
+			{"/test_files/bucketbadcolor.txt"},
+			{"/test_files/bucketbadcolor2.txt"},
+			{"/test_files/bucketbadcolor3.txt"}
 
 		};
 		return Arrays.asList(paths);
@@ -54,7 +54,7 @@ public class DrawingToolStartLineTest {
 		} catch (ExceptionFormatFile e) {
 			assertTrue(true);
 		} catch(Exception e){
-			fail("Don't excepted this exception");
+			fail("Don't excepted this exception. "+pathFile);
 		}
 	}
 

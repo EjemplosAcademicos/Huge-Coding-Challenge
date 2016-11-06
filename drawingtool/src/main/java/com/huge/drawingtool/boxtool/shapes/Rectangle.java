@@ -77,5 +77,10 @@ public class Rectangle extends Shape{
 			throw exceptionShape;
 		}
 	}
-
+	
+	@Override
+	public String toString() {
+		return "R "+upper_left_corner.toString()+" to "+lower_left_corner.toString();
+	}
+	
 }

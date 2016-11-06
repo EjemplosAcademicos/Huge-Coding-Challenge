@@ -29,6 +29,7 @@ public class DrawingTool {
 	}
 	
 	public void newGraphic(String filePath) throws IOException, ExceptionAccessFile, ExceptionFormatFile, ExceptionShape, ExceptionPaint {
+		
 		this.filePath = filePath;
 		ExceptionFormatFile excepFormatFile;
 		List<String> file = accessFile.readFile(filePath);
@@ -44,7 +45,6 @@ public class DrawingTool {
 			if(!drawLine.isEmpty() && draw.length>0 ){
 				switch (draw[0]) {
 					case "C": //Canvas
-						//canDrawCanvas(draw);
 						canDrawShape(draw, 3, 3, "C w h");
 						x1 = Integer.parseInt(draw[1]);
 						y1 = Integer.parseInt(draw[2]);
@@ -83,7 +83,7 @@ public class DrawingTool {
 						if(draw[3].isEmpty() || draw[3].length()>1){
 							excepFormatFile = new ExceptionFormatFile();
 							excepFormatFile.setId("PAINT "+ExceptionFormatFile.ERROR);
-							excepFormatFile.setMsnUser("Invalid format color Bucket. Please check B x y c. "+Arrays.toString(draw));
+							excepFormatFile.setMsnUser("Invalid format color Bucket. Please check B x y c. "+Arrays.toString(draw)+". Line: "+lineNum);
 							throw excepFormatFile;
 						}
 						char color = draw[3].charAt(0);
@@ -94,7 +94,7 @@ public class DrawingTool {
 					default:
 						excepFormatFile = new ExceptionFormatFile();
 						excepFormatFile.setId("SHAPE "+ExceptionFormatFile.ERROR);
-						excepFormatFile.setMsnUser("Invalid format, this option doesn´t exist. "+Arrays.toString(draw));
+						excepFormatFile.setMsnUser("Invalid format, this option doesn´t exist. "+Arrays.toString(draw)+". Line: "+lineNum);
 						throw excepFormatFile;
 				}
 			}else{
@@ -132,14 +132,14 @@ public class DrawingTool {
 				if(param.isEmpty() || !isNaturalNumber(param)){
 					excepFormatFile = new ExceptionFormatFile();
 					excepFormatFile.setId("SHAPE "+ExceptionFormatFile.ERROR);
-					excepFormatFile.setMsnUser("Invalid parameters format. Please check "+format+" ."+Arrays.toString(draw));
+					excepFormatFile.setMsnUser("Invalid parameters format. Please check "+format+" ."+Arrays.toString(draw)+". Line: "+lineNum);
 					throw excepFormatFile;
 				}
 			}
 		}else{
 			excepFormatFile = new ExceptionFormatFile();
 			excepFormatFile.setId("SHAPE "+ExceptionFormatFile.ERROR);
-			excepFormatFile.setMsnUser("Invalid parameters format. Please check "+format+" ."+Arrays.toString(draw));
+			excepFormatFile.setMsnUser("Invalid parameters format. Please check "+format+" ."+Arrays.toString(draw)+". Line: "+lineNum);
 			throw excepFormatFile;
 		}
 	}

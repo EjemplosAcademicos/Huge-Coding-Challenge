@@ -22,7 +22,7 @@ public class DrawingToolTest {
 	@Test
 	public void testNewGraphicEmptyFile() {
 		try {
-			drawingTool.newGraphic("D:/Huge/Coding Challenge/wk_luna_huge/drawingtool/src/test/resources/test_files/emptyfile.txt");
+			drawingTool.newGraphic("/test_files/emptyfile.txt");
 			fail("Excepted exception empty file");
 		} catch (ExceptionFormatFile e) {
 			assertEquals("File Empty!!", e.getMsnUser());

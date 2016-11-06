@@ -49,7 +49,7 @@ java -jar DrawingTool.jar
 |-- dist     # maven configuration dependencies
 |   |--DrawingTool.jar                     # Jar program              
 ...
-
+	
 ```
 
 ## Some useful info
@@ -59,4 +59,5 @@ java -jar DrawingTool.jar
  - Se puede dibujar si los puntos parametros permiten dibujar la forma deseada
  - Solo se puede dibujar en los limites del canvas
  - si hay varrios canvas se dibujar en el ultimo que se lea.
+ - tamñao limite del canvas 1024X768
 ```

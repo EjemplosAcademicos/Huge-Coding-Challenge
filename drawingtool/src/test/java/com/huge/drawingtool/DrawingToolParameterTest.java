@@ -27,12 +27,19 @@ public class DrawingToolParameterTest {
 	@Parameters
 	public static Collection<Object[]> nums(){
 		Object[][] nums = new Object[][]{
-			{"AA","1"},{"cc","22"},
-			{"-34","03"},{"5.5","45"},
-			{"0","04"},{"vss3","3344"},
-			{"3ff","3453453"},{"*","0239"},
-			{" ","0500"},{"","53"},
+			{"AA","1"},
+			{"cc","22"},
+			{"-34","03"},
+			{"5.5","45"},
+			{"0","04"},
+			{"vss3","3344"},
+			{"3ff","3453453"},
+			{"*","0239"},
+			{" ","0500"},
+			{"","53"},
 			{"#$%","68"},
+			{"#$%hddhjtdhdsjducheruregndklgmghghgnghjjhgjghjhgjhgjhgjghjghjhgjghjhgjhgjhgjghjhgjghjghjghjhgjghjghjhgjghjgherigjriggkdmgkdgkdgmdfgkmdfgldmgdlfmggdf",
+			 "43534534543535345345345345534534534534534534534534534534534534543534534534534534534534534534534534534534534534534534534534446556756765867868767897978978978978978979789546456456455464564578"},
 		};
 		return Arrays.asList(nums);
 	}

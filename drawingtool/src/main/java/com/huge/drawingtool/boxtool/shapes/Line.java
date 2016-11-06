@@ -87,4 +87,9 @@ public class Line extends Shape{
 		}
 	}
 
+	@Override
+	public String toString() {
+		return "L "+point_1.toString()+" to "+point_2.toString();
+	}
+	
 }
