@@ -1,7 +1,8 @@
 # Huge-Coding-Challenge
 
 ```
-This program is a simple drawing tool. The program reads the input.txt , executes a set of commands from the file, step by step, and produces output.txt with the shapes.
+This program is a simple drawing tool. The program reads the input.txt , executes a set of commands from the file, 
+step by step, and produces output.txt with the shapes.
 
 At moment the program let to create the following shapes:
  - C w h Create Canvas: create a new canvas of width w and height h.
@@ -13,7 +14,7 @@ At moment the program let to create the following shapes:
 ```
 ## Prerequisites
 ```
-java version "1.8.0_101"
+java version "1.8"
 ```
 ## Installation
 ```
@@ -24,7 +25,7 @@ java -jar DrawingTool.jar
 ```
 |-- src
 |   |-- main/java/com/huge/drawingtool
-|   |   |-- boxtool        			 # by convension async modules are prefixed with + sign            
+|   |   |-- boxtool        			       # by convension async modules are prefixed with + sign            
 |   |       |-- paint
 |   |       	|--
 |   |       	|-- 
@@ -34,16 +35,19 @@ java -jar DrawingTool.jar
 |   |       ...
 |   |   |-- file
 |   | 		|-- feature-module-1.component.html
-|   |   |-- util                    # utilities commons to the program
-|   |       |-- exceptions          # mangement exceptions of the program        
+|   |   |-- util                           # utilities commons to the program
+|   |       |-- exceptions                 # mangement exceptions of the program        
 |   |   ...    
-|   |   |-- App.java               # main 
+|   |   |-- App.java                       # main 
 |   |   |-- DrawingTool.java       
 |   |   |-- Graphic.java	         
 |   | 	...
 |	|-- test/java/com/huge/drawingtool     # Junit test module 
+|	|-- test/java/resouces/test_files      # files to test
 ...
 |-- pom.xml     # maven configuration dependencies
+|-- dist     # maven configuration dependencies
+|   |--DrawingTool.jar                     # Jar program              
 ...
 
 ```
@@ -54,4 +58,5 @@ java -jar DrawingTool.jar
  - debe existir un canvas para poder dibujar
  - Se puede dibujar si los puntos parametros permiten dibujar la forma deseada
  - Solo se puede dibujar en los limites del canvas
+ - si hay varrios canvas se dibujar en el ultimo que se lea.
 ```

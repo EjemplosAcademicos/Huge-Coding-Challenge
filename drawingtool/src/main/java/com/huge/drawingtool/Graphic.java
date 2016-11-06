@@ -5,27 +5,29 @@ import java.util.List;
 
 import com.huge.drawingtool.boxtool.paint.Paint;
 import com.huge.drawingtool.boxtool.shapes.Shape;
-import com.huge.drawingtool.util.exceptions.ExceptionDrawingTool;
+import com.huge.drawingtool.util.exceptions.ExceptionPaint;
+import com.huge.drawingtool.util.exceptions.ExceptionShape;
 
 public class Graphic {
 	
 	private Shape canvas;
 	private StringBuffer printGraphic;
 	private List<List<Character>> panel;
+    int lineNum;
 	
-	public Graphic(Shape canvas) throws ExceptionDrawingTool{
+	public Graphic(Shape canvas) throws ExceptionShape{
 		printGraphic = new StringBuffer();
 		panel = new ArrayList<List<Character>>();
 		this.canvas = canvas;
 		this.drawShape(canvas);
 	}
 
-	public void drawShape(Shape shape) throws ExceptionDrawingTool{
+	public void drawShape(Shape shape) throws ExceptionShape{
 		shape.draw(this);	
 		printPanel();
 	}
 	
-	public void paint(Paint paintTool) throws ExceptionDrawingTool{
+	public void paint(Paint paintTool) throws ExceptionPaint{
 		paintTool.paint(this);	
 		printPanel();
 	}
@@ -64,5 +66,12 @@ public class Graphic {
 	public void setPrintGraphic(StringBuffer printGraphic) {
 		this.printGraphic = printGraphic;
 	}
-	
+
+	public int getLineNum() {
+		return lineNum;
+	}
+
+	public void setLineNum(int lineNum) {
+		this.lineNum = lineNum;
+	}
 }
