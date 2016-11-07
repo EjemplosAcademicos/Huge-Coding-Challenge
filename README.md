@@ -15,10 +15,12 @@ At moment the program let to create the following shapes:
 ## Prerequisites
 ```
 java version "1.8"
+
+Be sure that your JAVA_HOME environment variable points to the jdk1.8.0 folder extracted from the JDK download.
 ```
 ## Installation
 ```
-java -jar DrawingTool.jar
+java -jar [DrawingTool.jar] (https://github.com/EjemplosAcademicos/Huge-Coding-Challenge/blob/master/drawingtool/dist/DrawingTool.jar) 
 ```
 ## App structure
 
