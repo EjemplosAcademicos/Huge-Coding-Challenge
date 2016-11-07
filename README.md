@@ -20,7 +20,7 @@ Be sure that your JAVA_HOME environment variable points to the jdk1.8.0 folder e
 ```
 ## Installation
 ```
-java -jar [DrawingTool.jar] (https://github.com/EjemplosAcademicos/Huge-Coding-Challenge/blob/master/drawingtool/dist/DrawingTool.jar) 
+java -jar [DrawingTool.jar] (https://github.com/EjemplosAcademicos/Huge-Coding-Challenge/blob/master/drawingtool/dist/DrawingTool.jar)
 ```
 ## App structure
 
