@@ -46,8 +46,10 @@ java -jar DrawingTool.jar
 |	|-- test/java/resouces/test_files      # files to test
 ...
 |-- pom.xml     # maven configuration dependencies
-|-- dist     # maven configuration dependencies
+|-- dist     	
 |   |--DrawingTool.jar                     # Jar program              
+|-- doc     							   # Java Doc	
+|   |--index.html		                   	      
 ...
 	
 ```
@@ -55,9 +57,8 @@ java -jar DrawingTool.jar
 ## Some useful info
 
 ```
- - debe existir un canvas para poder dibujar
- - Se puede dibujar si los puntos parametros permiten dibujar la forma deseada
- - Solo se puede dibujar en los limites del canvas
- - si hay varrios canvas se dibujar en el ultimo que se lea.
- - tamñao limite del canvas 1024X768
+ - There should always be a canvas in order to draw
+ - The maximum size for a canvas should be 1024 x 768
+ - You can only draw within the canvas 
+ - If there is multiple canvas then only the last one will be valid
 ```

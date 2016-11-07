@@ -5,6 +5,10 @@ import com.huge.drawingtool.boxtool.Color;
 import com.huge.drawingtool.boxtool.Contour;
 import com.huge.drawingtool.util.exceptions.ExceptionShape;
 
+/**
+ * The Line class provides the structure to represent a line and the operation to draw it. 
+ * @author sebas.monsalve@gmailcom
+ */
 public class Line extends Shape{
 
 	private Point point_1;
@@ -41,14 +45,11 @@ public class Line extends Shape{
 	@Override
 	public void draw(Graphic graphic) throws ExceptionShape {
 		Point dimensionCanvas = ((Canvas)graphic.getCanvas()).getDimensions();
-		//check if the points represents horizontal or vertical lines
 		if((point_1.getX() == point_2.getX()) || (point_1.getY() == point_2.getY())){
 			
-			//check if la linea este dentro del canvas
 			if( point_1.getX()>0 && point_1.getX()<=dimensionCanvas.getX() &&
 				point_1.getY()>0 && point_1.getY()<=dimensionCanvas.getY()){
 				
-				//check si el origen es menor que el destino
 				if( point_1.getX() <= point_2.getX() && point_1.getY() <= point_2.getY()){
 					
 					//Vertical line

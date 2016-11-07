@@ -17,6 +17,10 @@ import com.huge.drawingtool.util.exceptions.ExceptionFormatFile;
 import com.huge.drawingtool.util.exceptions.ExceptionPaint;
 import com.huge.drawingtool.util.exceptions.ExceptionShape;
 
+/**
+ * The DrawingTool class provides operations to charge a new graphic, draw shapes and print the graphic.
+ * @author sebas.monsalve@gmailcom
+ */
 public class DrawingTool {
 	
 	private Graphic graphics;
@@ -28,6 +32,15 @@ public class DrawingTool {
 		this.accessFile = new AccessFile();
 	}
 	
+	/**
+	 * Validates and draws the different shapes inside the file
+	 * @param filePath - path of the file with the instructions to draw
+	 * @throws IOException if there is a problem reading the file
+	 * @throws ExceptionAccessFile if there is a problem accessing to the file
+	 * @throws ExceptionFormatFile if there is a problem with the format of each instruction
+	 * @throws ExceptionShape if there is a problem drawing the shape
+	 * @throws ExceptionPaint if there is a problem painting the graphic
+	 */
 	public void newGraphic(String filePath) throws IOException, ExceptionAccessFile, ExceptionFormatFile, ExceptionShape, ExceptionPaint {
 		
 		this.filePath = filePath;
@@ -98,12 +111,11 @@ public class DrawingTool {
 						throw excepFormatFile;
 				}
 			}else{
-				//es que hay una linea vacia  ,,, mandar mensaje o seguir?
+				//Do nothing if there is a empty line in the file
 			}
 		}
 	}
 
-	//cckea que se pueda dibujar lo que hay ahi, que no sea vacio y que exita un canvas
 	private void existCanvas(List<String> file) throws ExceptionFormatFile {
 		ExceptionFormatFile excepFormatFile;
 		if(file!=null && !file.isEmpty()){ 
@@ -122,7 +134,14 @@ public class DrawingTool {
 		}
 	}
 	
-	// verfica que los parametros de las figuras seane enteros positivos
+	/**
+	 * Validate if the instruction to draw has the correct format
+	 * @param draw array with the instruction to draw
+	 * @param numParm number of parameters of the instruction
+	 * @param limit limited position of parameters
+	 * @param format format of the instruction
+	 * @throws ExceptionFormatFile if there is a problem with the format of the shape's parameters
+	 */
 	public void canDrawShape(String[]draw, int numParm, int limit, String format) throws ExceptionFormatFile{
 		ExceptionFormatFile excepFormatFile;
 		String param;
@@ -144,11 +163,20 @@ public class DrawingTool {
 		}
 	}
 	
+	/**
+	 * Save the results of the graphic in a file 
+	 * @throws ExceptionAccessFile if there is a problem saving the graphic in a file
+	 * @throws IOException if there is a problem accessing to the file
+	 */
 	public void saveGraphic() throws ExceptionAccessFile, IOException{
 		accessFile.writeToFile(filePath.substring(0,filePath.lastIndexOf('/'))+"/output.txt", graphics.getPrintGraphic().toString(), 0);	
 	}
 
-	//mejorar con el .macth
+	/**
+	 * Validate if a number belongs a the set of natural numbers
+	 * @param number value to validate
+	 * @return true is the number is natural
+	 */
 	public boolean isNaturalNumber(String number){
 		try{
 			int num = Integer.parseInt(number);

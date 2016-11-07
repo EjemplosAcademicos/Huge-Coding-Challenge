@@ -9,6 +9,10 @@ import com.huge.drawingtool.boxtool.shapes.Canvas;
 import com.huge.drawingtool.boxtool.shapes.Point;
 import com.huge.drawingtool.util.exceptions.ExceptionPaint;
 
+/**
+ * The BucketFill class provides the structure to represent a Bucket Fill and the operation to paint. 
+ * @author sebas.monsalve@gmailcom
+ */
 public class BucketFill extends Paint{
 	
 	private Point areaConnected;
@@ -22,14 +26,12 @@ public class BucketFill extends Paint{
 	public void paint(Graphic graphic) throws ExceptionPaint {
 		Point dimensionCanvas = ((Canvas)graphic.getCanvas()).getDimensions();
 		
-		//check if la linea este dentro del canvas
 		if( areaConnected.getX()>0 && areaConnected.getX()<=dimensionCanvas.getX() &&
 			areaConnected.getY()>0 && areaConnected.getY()<=dimensionCanvas.getY()){
 			
 			Point point = areaConnected;
 			
 			if(!((Character)graphic.getPanel().get(point.getY()).get(point.getX()) == Contour.SPACE.getContour())){
-				//Paint the initial point
 				graphic.getPanel().get(point.getY()).remove(point.getX());
 				graphic.getPanel().get(point.getY()).add(point.getX(),this.getColor_1().getColor());
 				return;

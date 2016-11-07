@@ -9,8 +9,8 @@ import java.nio.file.Path;
 import com.huge.drawingtool.util.exceptions.ExceptionDrawingTool;
 
 /**
- * Hello world!
- *
+ * Main Application
+ * @author sebas.monsalve@gmailcom
  */
 public class App 
 {
@@ -19,7 +19,7 @@ public class App
         DrawingTool drawingTool = new DrawingTool();
         
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.print("Enter path file (C:/xxx/xxx/namefile): ");
+        System.out.print("Enter path file (C:/xxx/xxx/namefile.txt): ");
         try {
 			String pathFile = br.readLine();
 			drawingTool.newGraphic(pathFile);

@@ -8,6 +8,10 @@ import com.huge.drawingtool.boxtool.shapes.Shape;
 import com.huge.drawingtool.util.exceptions.ExceptionPaint;
 import com.huge.drawingtool.util.exceptions.ExceptionShape;
 
+/**
+ * The Graphic class provides operations to draw,to paint and to print shapes.
+ * @author sebas.monsalve@gmailcom
+ */
 public class Graphic {
 	
 	private Shape canvas;
@@ -22,16 +26,29 @@ public class Graphic {
 		this.drawShape(canvas);
 	}
 
+	/**
+	 * Draw a shape
+	 * @param shape value to draw
+	 * @throws ExceptionShape if there is a problem drawing the shape
+	 */
 	public void drawShape(Shape shape) throws ExceptionShape{
 		shape.draw(this);	
 		printPanel();
 	}
 	
+	/**
+	 * Paint a graphic
+	 * @param paintTool value to paint
+	 * @throws ExceptionPaint if there is a problem painting the graphic
+	 */
 	public void paint(Paint paintTool) throws ExceptionPaint{
 		paintTool.paint(this);	
 		printPanel();
 	}
 	
+	/**
+	 * Print the shapes inthe panel of the graphics
+	 */
 	public void printPanel(){
 		List<Character> row;//
 		for(int i=0; i<panel.size(); i++){

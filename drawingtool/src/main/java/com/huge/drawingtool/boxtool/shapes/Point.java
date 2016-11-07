@@ -9,8 +9,8 @@ import com.huge.drawingtool.boxtool.Contour;
 import com.huge.drawingtool.util.exceptions.ExceptionShape;
 
 /**
+ * The Point class provides the structure to represent a point and the operation to draw it. 
  * @author sebas.monsalve@gmailcom
- *
  */
 public class Point extends Shape{
 
@@ -61,7 +61,6 @@ public class Point extends Shape{
 	@Override
 	public void draw(Graphic graphic) throws ExceptionShape {
 		Point dimensionCanvas = ((Canvas)graphic.getCanvas()).getDimensions();
-		//check if la linea este dentro del canvas
 		if( x>0 && x<=dimensionCanvas.getX() &&
 			y>0 && y<=dimensionCanvas.getY()){
 			

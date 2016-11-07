@@ -8,8 +8,9 @@ import com.huge.drawingtool.boxtool.Color;
 import com.huge.drawingtool.util.exceptions.ExceptionPaint;
 
 /**
- * @author itos
- *
+ * The Paint abstract class provides the structure and operations to 
+ * represent different forms to paint a graphic, 
+ * @author sebas.monsalve@gmailcom
  */
 public abstract class Paint {
 
@@ -31,5 +32,10 @@ public abstract class Paint {
 		this.color_1 = color_1;
 	}
 
+	/**
+	 * Implementation to paint a specific grapchic
+	 * @param graphic  contain the panel 
+	 * @throws ExceptionPaint if there is a problem painting the graphic
+	 */
 	public abstract void paint(Graphic graphic) throws ExceptionPaint;
 }

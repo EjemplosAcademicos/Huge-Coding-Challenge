@@ -1,5 +1,11 @@
 package com.huge.drawingtool.util.exceptions;
 
+/**
+ * The ExceptionDrawingTool class provides operation to manage the exceptions 
+ * of the application
+ * @author sebas.monsalve@gmail.com
+ *
+ */
 public class ExceptionDrawingTool extends Exception{
 	
 	public static final String ERROR = "Error";

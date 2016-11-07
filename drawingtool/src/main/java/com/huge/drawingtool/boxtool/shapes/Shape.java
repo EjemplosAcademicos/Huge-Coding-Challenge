@@ -9,9 +9,8 @@ import com.huge.drawingtool.boxtool.Contour;
 import com.huge.drawingtool.util.exceptions.ExceptionShape;
 
 /**
- * This is the abstract parent class for different shape classes,
- * It provides an abstract method draw().
- * 
+ * The Shape abstract class provides the structure and operations to 
+ * represent different shape, 
  * @author sebas.monsalve@gmailcom
  */
 public abstract class Shape {
@@ -65,7 +64,9 @@ public abstract class Shape {
 	}
 
 	/**
-	 * @param canvas
+	 * Implementation to draw a specific shape
+	 * @param graphic contain the panel
+	 * @throws ExceptionShape if there is a problem drawing the shape
 	 */
 	public abstract void draw(Graphic graphic) throws ExceptionShape;
 

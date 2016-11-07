@@ -8,8 +8,8 @@ import com.huge.drawingtool.boxtool.Contour;
 import com.huge.drawingtool.util.exceptions.ExceptionShape;
 
 /**
+ * The Canvas class provides the structure to represent a canvas and the operation to draw it. 
  * @author sebas.monsalve@gmailcom
- *
  */
 public class Canvas extends Shape{
 	

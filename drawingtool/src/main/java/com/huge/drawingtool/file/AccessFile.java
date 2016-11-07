@@ -9,6 +9,10 @@ import java.util.List;
 import com.huge.drawingtool.util.exceptions.ExceptionAccessFile;
 import com.huge.drawingtool.util.exceptions.ExceptionFormatFile;
 
+/**
+ * The AccessFile class provides operations to read and to write in a specific file
+ * @author sebas.monsalve@gmailcom
+ */
 public class AccessFile {
 	
 	private RandomAccessFile raf;

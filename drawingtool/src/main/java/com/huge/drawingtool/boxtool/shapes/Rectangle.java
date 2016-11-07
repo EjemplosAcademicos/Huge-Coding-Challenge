@@ -1,13 +1,14 @@
 package com.huge.drawingtool.boxtool.shapes;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.huge.drawingtool.Graphic;
 import com.huge.drawingtool.boxtool.Color;
 import com.huge.drawingtool.boxtool.Contour;
 import com.huge.drawingtool.util.exceptions.ExceptionShape;
 
+/**
+ * The Rectangle class provides the structure to represent a rectangle and the operation to draw it. 
+ * @author sebas.monsalve@gmailcom
+ */
 public class Rectangle extends Shape{
 	
 	private Point upper_left_corner;
@@ -45,11 +46,9 @@ public class Rectangle extends Shape{
 	public void draw(Graphic graphic) throws ExceptionShape {
 		Point dimensionCanvas = ((Canvas)graphic.getCanvas()).getDimensions();
 		
-		//check if la linea este dentro del canvas
 		if( upper_left_corner.getX()>0 && upper_left_corner.getX()<=dimensionCanvas.getX() &&
 			upper_left_corner.getY()>0 && upper_left_corner.getY()<=dimensionCanvas.getY()){
 			
-			//check si el origen es menor que el destino
 			if( upper_left_corner.getX() <= lower_left_corner.getX() && upper_left_corner.getY() <= lower_left_corner.getY()){
 			
 				for(int i=upper_left_corner.getY(); i<=lower_left_corner.getY() && i<=dimensionCanvas.getY(); i++){
