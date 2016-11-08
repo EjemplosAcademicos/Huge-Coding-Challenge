@@ -59,7 +59,7 @@ java -jar DrawingTool.jar
 ## Some useful info
 
 ```
- - There should always be a canvas in order to draw
+ - There should always be a canvas in order to draw at the first line of the file
  - The maximum size for a canvas should be 1024 x 768
  - You can only draw within the canvas 
  - If there is multiple canvas then only the last one will be valid

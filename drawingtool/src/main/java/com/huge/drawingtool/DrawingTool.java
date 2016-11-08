@@ -12,7 +12,6 @@ import com.huge.drawingtool.boxtool.shapes.Point;
 import com.huge.drawingtool.boxtool.shapes.Rectangle;
 import com.huge.drawingtool.file.AccessFile;
 import com.huge.drawingtool.util.exceptions.ExceptionAccessFile;
-import com.huge.drawingtool.util.exceptions.ExceptionDrawingTool;
 import com.huge.drawingtool.util.exceptions.ExceptionFormatFile;
 import com.huge.drawingtool.util.exceptions.ExceptionPaint;
 import com.huge.drawingtool.util.exceptions.ExceptionShape;
